@@ -14,7 +14,7 @@
     <string name="numero">Nº</string>
     <string name="cep">CEP</string>
     <string name="bairro">Bairro</string>
-    <string name="estado">Estado</string>
+    <string name="estados">Estados</string>
     <string name="nacionalidade">Nacionalidade</string>
     <string name="estado_civil">Estado Cívil</string>
     <string name="profissao">Profissão</string>
@@ -25,7 +25,6 @@
     <string name="ctps">CTPS</string>
     <string name="pis_pasep">PIS/PASEP</string>
     <string name="inscricao_estadual">Inscrição Estadual</string>
-    
     <string name="proximo">&gt;</string>
     <string name="anterior">&lt;</string>
 

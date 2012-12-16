@@ -1,13 +1,14 @@
 package app.controleprocessoslegais.util;
 
 import android.widget.EditText;
+import android.widget.Spinner;
 import app.controleprocessoslegais.R;
 import app.controleprocessoslegais.activitys.CadastroClienteActivity;
 import app.controleprocessoslegais.wrappers.ClienteWrapper;
 
 public class Builders {
 
-	public static ClienteWrapper constroiClienteFromViews(CadastroClienteActivity activityCliente){
+	public static ClienteWrapper constroiClienteFromViews(CadastroClienteActivity activityCliente) {
 		EditText bairroEditView = (EditText) activityCliente.findViewById(R.id.bairroEditView);
 		EditText cepEditView = (EditText) activityCliente.findViewById(R.id.cepEditView);
 		EditText nomeEditView = (EditText) activityCliente.findViewById(R.id.nomeEditView);
@@ -16,7 +17,7 @@ public class Builders {
 		EditText orgaoExpedidorEditView = (EditText) activityCliente.findViewById(R.id.orgaoExpedidorEditView);
 		EditText ruaEditView = (EditText) activityCliente.findViewById(R.id.ruaEditView);
 		EditText numeroEditView = (EditText) activityCliente.findViewById(R.id.numeroEditView);
-		EditText estadoCivilEditView = (EditText) activityCliente.findViewById(R.id.estadoCivilEditView);
+		Spinner estadoCivilEditView = (Spinner) activityCliente.findViewById(R.id.estadoCivilSpinnerView);
 		EditText nacionalidadeEditView = (EditText) activityCliente.findViewById(R.id.nacionalidadeEditView);
 		EditText profissaoEditView = (EditText) activityCliente.findViewById(R.id.profissaoEditView);
 		EditText maeEditView = (EditText) activityCliente.findViewById(R.id.maeEditView);
@@ -24,16 +25,16 @@ public class Builders {
 		EditText ctpsEditView = (EditText) activityCliente.findViewById(R.id.ctpsEditView);
 		EditText pisPasepEditView = (EditText) activityCliente.findViewById(R.id.pisPasepEditView);
 		EditText inscricaoEstadualEditView = (EditText) activityCliente.findViewById(R.id.inscricaoEstadualEditView);
-		EditText estadoEditView = (EditText) activityCliente.findViewById(R.id.estadoEditView);
-		
+		Spinner estadoSpinnerView = (Spinner) activityCliente.findViewById(R.id.estadoSpinnerView);
+
 		ClienteWrapper cliente = new ClienteWrapper();
 		cliente.setBairro(bairroEditView.getText().toString());
 		cliente.setCep(cepEditView.getText().toString());
 		cliente.setCnpg(cpfCnpjEditView.getText().toString());
 		cliente.setCpf(cpfCnpjEditView.getText().toString());
 		cliente.setCtps(ctpsEditView.getText().toString());
-		cliente.setEstado(estadoEditView.getText().toString());
-		cliente.setEstadoCivil(estadoCivilEditView.getText().toString());
+		cliente.setEstado(estadoSpinnerView.getSelectedItem().toString());
+		cliente.setEstadoCivil(estadoCivilEditView.getSelectedItem().toString());
 		cliente.setInscricaoEstadual(inscricaoEstadualEditView.getText().toString());
 		cliente.setNacionalidade(nacionalidadeEditView.getText().toString());
 		cliente.setNomeCompleto(nomeEditView.getText().toString());
@@ -45,7 +46,7 @@ public class Builders {
 		cliente.setRua(ruaEditView.getText().toString());
 		cliente.setPai(paiEditView.getText().toString());
 		cliente.setMae(maeEditView.getText().toString());
-		
+
 		return cliente;
 	}
 }
