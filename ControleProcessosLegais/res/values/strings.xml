@@ -25,7 +25,7 @@
     <string name="ctps">CTPS</string>
     <string name="pis_pasep">PIS/PASEP</string>
     <string name="inscricao_estadual">Inscrição Estadual</string>
-    <string name="proximo">&gt;</string>
-    <string name="anterior">&lt;</string>
+    <string name="salvar">Salvar</string>
+    <string name="cancelar">Cancelar</string>
 
 </resources>

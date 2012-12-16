@@ -8,7 +8,7 @@
         android:id="@+id/scrollView1"
         android:layout_width="wrap_content"
         android:layout_height="0px"
-        android:layout_weight="3" >
+        android:layout_weight="6" >
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -92,7 +92,6 @@
                 android:layout_height="25sp"
                 android:layout_below="@+id/barra2"
                 android:layout_marginLeft="15sp"
-                
                 android:text="@string/endereco_completo"
                 android:textSize="18sp"
                 tools:context=".CadastroClienteActivity" />
@@ -221,10 +220,11 @@
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
                 android:layout_marginTop="3sp"
-                android:inputType="number"
                 android:hint="@+string/profissao"
+                android:inputType="number"
                 android:textSize="13sp"
                 android:width="300sp" />
+
             <View
                 android:id="@+id/barra5"
                 android:layout_width="fill_parent"
@@ -234,16 +234,17 @@
                 android:layout_marginRight="10sp"
                 android:background="#FF3300" >
             </View>
+
             <TextView
                 android:id="@+id/nomeDosPaisTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="25sp"
                 android:layout_below="@+id/barra5"
                 android:layout_marginLeft="15sp"
-                
                 android:text="@string/nome_dos_pais"
                 android:textSize="18sp"
                 tools:context=".CadastroClienteActivity" />
+
             <View
                 android:id="@+id/barra6"
                 android:layout_width="fill_parent"
@@ -253,15 +254,16 @@
                 android:layout_marginRight="10sp"
                 android:background="#FF3300" >
             </View>
+
             <EditText
                 android:id="@+id/maeEditView"
                 android:layout_width="wrap_content"
                 android:layout_height="40sp"
                 android:layout_below="@+id/barra6"
                 android:layout_marginLeft="10sp"
-                android:hint="@+string/mae"
                 android:layout_marginRight="10sp"
                 android:layout_marginTop="3sp"
+                android:hint="@+string/mae"
                 android:inputType="number"
                 android:textSize="13sp"
                 android:width="300sp" />
@@ -272,9 +274,9 @@
                 android:layout_height="40sp"
                 android:layout_below="@+id/maeEditView"
                 android:layout_marginLeft="10sp"
-                android:hint="@+string/pai"
                 android:layout_marginRight="10sp"
                 android:layout_marginTop="3sp"
+                android:hint="@+string/pai"
                 android:inputType="number"
                 android:textSize="13sp"
                 android:width="300sp" />
@@ -288,6 +290,7 @@
                 android:layout_marginRight="10sp"
                 android:background="#FF3300" >
             </View>
+
             <EditText
                 android:id="@+id/ctpsEditView"
                 android:layout_width="wrap_content"
@@ -296,8 +299,8 @@
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
                 android:layout_marginTop="3sp"
-                android:inputType="number"
                 android:hint="@+string/ctps"
+                android:inputType="number"
                 android:textSize="13sp"
                 android:width="300sp" />
 
@@ -309,8 +312,8 @@
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
                 android:layout_marginTop="3sp"
-                android:inputType="number"
                 android:hint="@+string/pis_pasep"
+                android:inputType="number"
                 android:textSize="13sp"
                 android:width="300sp" />
 
@@ -321,8 +324,8 @@
                 android:layout_below="@+id/pisPasepEditView"
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
-                android:hint="@+string/inscricao_estadual"
                 android:layout_marginTop="3sp"
+                android:hint="@+string/inscricao_estadual"
                 android:inputType="number"
                 android:textSize="13sp"
                 android:width="300sp" />
@@ -331,16 +334,30 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" 
-        android:background="#555555">
+        android:layout_height="60dp"
+        android:background="#555555"
+        android:orientation="horizontal" >
 
         <Button
-            android:id="@+id/botaoProximo"
-            android:layout_width="50sp"
+            android:id="@+id/botaoSalvar"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:text="@string/proximo"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:text="@string/salvar"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/botaoCancelar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:text="@string/cancelar"
             android:textSize="20sp" />
     </LinearLayout>
 
