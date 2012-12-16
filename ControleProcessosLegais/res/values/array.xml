@@ -1,0 +1,16 @@
+<resources>
+
+    <string-array name="estados_array">
+        <item>Estado</item>
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+    </string-array>
+    <string-array name="estado_civil_array">
+        <item>Estado Civil</item>
+        <item>Solteiro</item>
+        <item>Casado</item>
+    </string-array>
+
+</resources>

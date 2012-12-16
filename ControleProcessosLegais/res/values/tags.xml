@@ -1,0 +1,5 @@
+<resources>
+
+   <string name="estado_tag">estado</string>
+   <string name="estado_civil_tag">estado_civil</string>
+</resources>
