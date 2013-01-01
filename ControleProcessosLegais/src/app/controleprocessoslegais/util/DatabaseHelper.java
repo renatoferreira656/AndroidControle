@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import android.content.Context;
-import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -20,14 +19,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	public DatabaseHelper(Context context) {
 		super(context, DBNAME, null, 1);
 		this.context = context;
+
 	}
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		try {
-			db.execSQL(createDataBase(db));
-		} catch (SQLException e) {
-			e.printStackTrace();
+			db.execSQL(this.createDataBase(db));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

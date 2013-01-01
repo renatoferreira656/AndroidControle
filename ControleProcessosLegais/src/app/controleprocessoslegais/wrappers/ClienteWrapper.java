@@ -121,7 +121,7 @@ public class ClienteWrapper {
 		return cnpg;
 	}
 
-	public void setCnpg(String cnpg) {
+	public void setCnpj(String cnpg) {
 		this.cnpg = cnpg;
 	}
 

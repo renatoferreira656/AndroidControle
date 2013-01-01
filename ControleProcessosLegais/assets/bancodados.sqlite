@@ -11,10 +11,10 @@ CREATE TABLE clientes(id INT AUTO_INCREMENT,
 					nacionalidade VARCHAR(30),
 					estado_civil VARCHAR(30),
 					profissao VARCHAR(30),
-					cnpg VARCHAR(30),
+					cnpj VARCHAR(30),
 					ctps VARCHAR(30),
 					pis_pasep VARCHAR(30),
 					inscricao_estadual VARCHAR(30),
 					pai VARCHAR(30),
 					mae VARCHAR(30),
-				   primary key(id));
+				    primary key(id));

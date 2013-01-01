@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <string name="app_name">Controle Processos Legais</string>
@@ -26,6 +27,9 @@
     <string name="pis_pasep">PIS/PASEP</string>
     <string name="inscricao_estadual">Inscrição Estadual</string>
     <string name="salvar">Salvar</string>
+    <string name="mais">+</string>
     <string name="cancelar">Cancelar</string>
-
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_listagem_cliente">ListagemClienteActivity</string>
+    <string name="sem_selecao">Sem Seleção</string>
 </resources>

@@ -5,7 +5,7 @@
     android:orientation="vertical" >
 
     <ScrollView
-        android:id="@+id/scrollView1"
+        android:id="@+idIncluir/scrollView1"
         android:layout_width="wrap_content"
         android:layout_height="0px"
         android:layout_weight="6" >
@@ -15,7 +15,7 @@
             android:layout_height="wrap_content" >
 
             <View
-                android:id="@+id/barra1"
+                android:id="@+idIncluir/barra1"
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
                 android:layout_marginLeft="10sp"
@@ -24,10 +24,10 @@
             </View>
 
             <EditText
-                android:id="@+id/nomeEditView"
+                android:id="@+idIncluir/nomeEditView"
                 android:layout_width="wrap_content"
                 android:layout_height="40sp"
-                android:layout_below="@+id/barra1"
+                android:layout_below="@+idIncluir/barra1"
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
                 android:layout_marginTop="3sp"
@@ -38,10 +38,10 @@
                 android:width="300sp" />
 
             <EditText
-                android:id="@+id/rgEditView"
+                android:id="@+idIncluir/rgEditView"
                 android:layout_width="wrap_content"
                 android:layout_height="40sp"
-                android:layout_below="@+id/nomeEditView"
+                android:layout_below="@+idIncluir/nomeEditView"
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
                 android:layout_marginTop="3sp"
@@ -50,24 +50,24 @@
                 android:width="150sp" />
 
             <EditText
-                android:id="@+id/orgaoExpedidorEditView"
+                android:id="@+idIncluir/orgaoExpedidorEditView"
                 android:layout_width="wrap_content"
                 android:layout_height="40sp"
-                android:layout_below="@+id/nomeEditView"
+                android:layout_below="@+idIncluir/nomeEditView"
                 android:layout_marginLeft="4sp"
                 android:layout_marginRight="10sp"
                 android:layout_marginTop="3sp"
-                android:layout_toRightOf="@+id/rgEditView"
+                android:layout_toRightOf="@+idIncluir/rgEditView"
                 android:hint="@string/orgao_expedidor"
                 android:inputType="number"
                 android:textSize="13sp"
                 android:width="150sp" />
 
             <EditText
-                android:id="@+id/cpfcnpjEditView"
+                android:id="@+idIncluir/cpfcnpjEditView"
                 android:layout_width="wrap_content"
                 android:layout_height="40sp"
-                android:layout_below="@+id/orgaoExpedidorEditView"
+                android:layout_below="@+idIncluir/orgaoExpedidorEditView"
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
                 android:layout_marginTop="3sp"
@@ -77,40 +77,40 @@
                 android:width="300sp" />
 
             <View
-                android:id="@+id/barra2"
+                android:id="@+idIncluir/barra2"
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
-                android:layout_below="@+id/cpfcnpjEditView"
+                android:layout_below="@+idIncluir/cpfcnpjEditView"
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
                 android:background="#FF3300" >
             </View>
 
             <TextView
-                android:id="@+id/enderecoTextView"
+                android:id="@+idIncluir/enderecoTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="25sp"
-                android:layout_below="@+id/barra2"
+                android:layout_below="@+idIncluir/barra2"
                 android:layout_marginLeft="15sp"
                 android:text="@string/endereco_completo"
                 android:textSize="18sp"
                 tools:context=".CadastroClienteActivity" />
 
             <View
-                android:id="@+id/barra3"
+                android:id="@+idIncluir/barra3"
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
-                android:layout_below="@+id/enderecoTextView"
+                android:layout_below="@+idIncluir/enderecoTextView"
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
                 android:background="#FF3300" >
             </View>
 
             <EditText
-                android:id="@+id/ruaEditView"
+                android:id="@+idIncluir/ruaEditView"
                 android:layout_width="wrap_content"
                 android:layout_height="40sp"
-                android:layout_below="@+id/barra3"
+                android:layout_below="@+idIncluir/barra3"
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
                 android:layout_marginTop="3sp"
@@ -120,10 +120,10 @@
                 android:width="300sp" />
 
             <EditText
-                android:id="@+id/numeroEditView"
+                android:id="@+idIncluir/numeroEditView"
                 android:layout_width="wrap_content"
                 android:layout_height="40sp"
-                android:layout_below="@+id/ruaEditView"
+                android:layout_below="@+idIncluir/ruaEditView"
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
                 android:layout_marginTop="3sp"
@@ -133,24 +133,24 @@
                 android:width="100sp" />
 
             <EditText
-                android:id="@+id/bairroEditView"
+                android:id="@+idIncluir/bairroEditView"
                 android:layout_width="wrap_content"
                 android:layout_height="40sp"
-                android:layout_below="@+id/ruaEditView"
+                android:layout_below="@+idIncluir/ruaEditView"
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
                 android:layout_marginTop="3sp"
-                android:layout_toRightOf="@+id/numeroEditView"
+                android:layout_toRightOf="@+idIncluir/numeroEditView"
                 android:hint="@+string/bairro"
                 android:inputType="number"
                 android:textSize="13sp"
                 android:width="200sp" />
 
             <Spinner
-                android:id="@+id/estadoSpinnerView"
+                android:id="@+idIncluir/estadoSpinnerView"
                 android:layout_width="wrap_content"
                 android:layout_height="40sp"
-                android:layout_below="@+id/bairroEditView"
+                android:layout_below="@+idIncluir/bairroEditView"
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
                 android:layout_marginTop="3sp"
@@ -162,33 +162,33 @@
                 android:width="100sp" />
 
             <EditText
-                android:id="@+id/cepEditView"
+                android:id="@+idIncluir/cepEditView"
                 android:layout_width="wrap_content"
                 android:layout_height="40sp"
-                android:layout_below="@+id/bairroEditView"
+                android:layout_below="@+idIncluir/bairroEditView"
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
                 android:layout_marginTop="3sp"
-                android:layout_toRightOf="@+id/estadoSpinnerView"
+                android:layout_toRightOf="@+idIncluir/estadoSpinnerView"
                 android:inputType="number"
                 android:textSize="13sp"
                 android:width="200sp" />
 
             <View
-                android:id="@+id/barra4"
+                android:id="@+idIncluir/barra4"
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
-                android:layout_below="@+id/cepEditView"
+                android:layout_below="@+idIncluir/cepEditView"
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
                 android:background="#FF3300" >
             </View>
 
             <EditText
-                android:id="@+id/nacionalidadeEditView"
+                android:id="@+idIncluir/nacionalidadeEditView"
                 android:layout_width="wrap_content"
                 android:layout_height="40sp"
-                android:layout_below="@+id/barra4"
+                android:layout_below="@+idIncluir/barra4"
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
                 android:layout_marginTop="3sp"
@@ -198,10 +198,10 @@
                 android:width="300sp" />
 
             <Spinner
-                android:id="@+id/estadoCivilSpinnerView"
+                android:id="@+idIncluir/estadoCivilSpinnerView"
                 android:layout_width="wrap_content"
                 android:layout_height="40sp"
-                android:layout_below="@+id/nacionalidadeEditView"
+                android:layout_below="@+idIncluir/nacionalidadeEditView"
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
                 android:layout_marginTop="3sp"
@@ -213,10 +213,10 @@
                 android:width="300sp" />
 
             <EditText
-                android:id="@+id/profissaoEditView"
+                android:id="@+idIncluir/profissaoEditView"
                 android:layout_width="wrap_content"
                 android:layout_height="40sp"
-                android:layout_below="@+id/estadoCivilSpinnerView"
+                android:layout_below="@+idIncluir/estadoCivilSpinnerView"
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
                 android:layout_marginTop="3sp"
@@ -226,40 +226,40 @@
                 android:width="300sp" />
 
             <View
-                android:id="@+id/barra5"
+                android:id="@+idIncluir/barra5"
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
-                android:layout_below="@+id/profissaoEditView"
+                android:layout_below="@+idIncluir/profissaoEditView"
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
                 android:background="#FF3300" >
             </View>
 
             <TextView
-                android:id="@+id/nomeDosPaisTextView"
+                android:id="@+idIncluir/nomeDosPaisTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="25sp"
-                android:layout_below="@+id/barra5"
+                android:layout_below="@+idIncluir/barra5"
                 android:layout_marginLeft="15sp"
                 android:text="@string/nome_dos_pais"
                 android:textSize="18sp"
                 tools:context=".CadastroClienteActivity" />
 
             <View
-                android:id="@+id/barra6"
+                android:id="@+idIncluir/barra6"
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
-                android:layout_below="@+id/nomeDosPaisTextView"
+                android:layout_below="@+idIncluir/nomeDosPaisTextView"
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
                 android:background="#FF3300" >
             </View>
 
             <EditText
-                android:id="@+id/maeEditView"
+                android:id="@+idIncluir/maeEditView"
                 android:layout_width="wrap_content"
                 android:layout_height="40sp"
-                android:layout_below="@+id/barra6"
+                android:layout_below="@+idIncluir/barra6"
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
                 android:layout_marginTop="3sp"
@@ -269,10 +269,10 @@
                 android:width="300sp" />
 
             <EditText
-                android:id="@+id/paiEditView"
+                android:id="@+idIncluir/paiEditView"
                 android:layout_width="wrap_content"
                 android:layout_height="40sp"
-                android:layout_below="@+id/maeEditView"
+                android:layout_below="@+idIncluir/maeEditView"
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
                 android:layout_marginTop="3sp"
@@ -282,20 +282,20 @@
                 android:width="300sp" />
 
             <View
-                android:id="@+id/barra7"
+                android:id="@+idIncluir/barra7"
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
-                android:layout_below="@+id/paiEditView"
+                android:layout_below="@+idIncluir/paiEditView"
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
                 android:background="#FF3300" >
             </View>
 
             <EditText
-                android:id="@+id/ctpsEditView"
+                android:id="@+idIncluir/ctpsEditView"
                 android:layout_width="wrap_content"
                 android:layout_height="40sp"
-                android:layout_below="@+id/barra7"
+                android:layout_below="@+idIncluir/barra7"
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
                 android:layout_marginTop="3sp"
@@ -305,10 +305,10 @@
                 android:width="300sp" />
 
             <EditText
-                android:id="@+id/pisPasepEditView"
+                android:id="@+idIncluir/pisPasepEditView"
                 android:layout_width="wrap_content"
                 android:layout_height="40sp"
-                android:layout_below="@+id/ctpsEditView"
+                android:layout_below="@+idIncluir/ctpsEditView"
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
                 android:layout_marginTop="3sp"
@@ -318,10 +318,10 @@
                 android:width="300sp" />
 
             <EditText
-                android:id="@+id/inscricaoEstadualEditView"
+                android:id="@+idIncluir/inscricaoEstadualEditView"
                 android:layout_width="wrap_content"
                 android:layout_height="40sp"
-                android:layout_below="@+id/pisPasepEditView"
+                android:layout_below="@+idIncluir/pisPasepEditView"
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
                 android:layout_marginTop="3sp"
@@ -339,7 +339,7 @@
         android:orientation="horizontal" >
 
         <Button
-            android:id="@+id/botaoSalvar"
+            android:id="@+idIncluir/botaoSalvar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -350,7 +350,7 @@
             android:textSize="20sp" />
 
         <Button
-            android:id="@+id/botaoCancelar"
+            android:id="@+idIncluir/botaoCancelar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"

@@ -19,6 +19,12 @@ public final class R {
         public static final int ic_launcher=0x7f020001;
     }
     public static final class id {
+        public static final int list_item_entry_drawable=0x7f0b0000;
+        public static final int list_item_entry_title=0x7f0b0001;
+        public static final int list_item_section_text=0x7f0b0002;
+        public static final int menu_settings=0x7f0b0003;
+    }
+    public static final class idIncluir {
         public static final int bairroEditView=0x7f08000b;
         public static final int barra1=0x7f080001;
         public static final int barra2=0x7f080006;
@@ -49,17 +55,27 @@ public final class R {
         public static final int ruaEditView=0x7f080009;
         public static final int scrollView1=0x7f080000;
     }
+    public static final class idListagem {
+        public static final int botaoAdicionar=0x7f0a0001;
+        public static final int linearLayout=0x7f0a0000;
+        public static final int listView1=0x7f0a0003;
+        public static final int searchEdit=0x7f0a0002;
+    }
     public static final class layout {
         public static final int activity_cadastro_cliente=0x7f030000;
+        public static final int activity_listagem_cliente=0x7f030001;
+        public static final int list_item_entry=0x7f030002;
+        public static final int list_item_section=0x7f030003;
     }
     public static final class menu {
         public static final int activity_cadastro_cliente=0x7f070000;
+        public static final int activity_listagem_cliente=0x7f070001;
     }
     public static final class string {
         public static final int app_name=0x7f050001;
         public static final int bairro=0x7f05000e;
         public static final int campo_obrigatorio=0x7f050000;
-        public static final int cancelar=0x7f05001b;
+        public static final int cancelar=0x7f05001c;
         public static final int cep=0x7f05000d;
         public static final int cnpg=0x7f050013;
         public static final int cpf=0x7f050007;
@@ -67,11 +83,13 @@ public final class R {
         public static final int ctps=0x7f050017;
         public static final int endereco_completo=0x7f05000a;
         public static final int estado_civil=0x7f050011;
-        public static final int estado_civil_tag=0x7f05001d;
-        public static final int estado_tag=0x7f05001c;
+        public static final int estado_civil_tag=0x7f050021;
+        public static final int estado_tag=0x7f050020;
         public static final int estados=0x7f05000f;
+        public static final int hello_world=0x7f05001d;
         public static final int inscricao_estadual=0x7f050019;
         public static final int mae=0x7f050015;
+        public static final int mais=0x7f05001b;
         public static final int menu_settings=0x7f050002;
         public static final int nacionalidade=0x7f050010;
         public static final int nome=0x7f050004;
@@ -85,7 +103,9 @@ public final class R {
         public static final int rg=0x7f050006;
         public static final int rua=0x7f05000b;
         public static final int salvar=0x7f05001a;
+        public static final int sem_selecao=0x7f05001f;
         public static final int title_activity_cadastro_cliente=0x7f050003;
+        public static final int title_activity_listagem_cliente=0x7f05001e;
     }
     public static final class style {
         public static final int AppTheme=0x7f060000;
