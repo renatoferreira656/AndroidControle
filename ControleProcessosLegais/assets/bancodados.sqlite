@@ -1,4 +1,4 @@
-CREATE TABLE clientes(id INT AUTO_INCREMENT,
+CREATE TABLE clientes(id INTEGER PRIMARY KEY AUTOINCREMENT,
 					nome_completo VARCHAR(30),
 					rg VARCHAR(30),
 					cpf VARCHAR(30),
@@ -16,5 +16,4 @@ CREATE TABLE clientes(id INT AUTO_INCREMENT,
 					pis_pasep VARCHAR(30),
 					inscricao_estadual VARCHAR(30),
 					pai VARCHAR(30),
-					mae VARCHAR(30),
-				    primary key(id));
+					mae VARCHAR(30));

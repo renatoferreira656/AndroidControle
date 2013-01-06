@@ -19,7 +19,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	public DatabaseHelper(Context context) {
 		super(context, DBNAME, null, 1);
 		this.context = context;
-
 	}
 
 	@Override

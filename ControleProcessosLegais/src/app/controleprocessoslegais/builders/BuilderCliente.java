@@ -13,8 +13,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
 import app.controleprocessoslegais.R;
-import app.controleprocessoslegais.activitys.CadastroClienteActivity;
+import app.controleprocessoslegais.activitys.IncluirAlterarClienteActivity;
 import app.controleprocessoslegais.activitys.sectionlistview.EntryItem;
+import app.controleprocessoslegais.activitys.sectionlistview.Item;
 import app.controleprocessoslegais.activitys.sectionlistview.SectionItem;
 import app.controleprocessoslegais.contantes.ConstantesCliente;
 import app.controleprocessoslegais.util.Validador;
@@ -22,7 +23,7 @@ import app.controleprocessoslegais.wrappers.ClienteWrapper;
 
 public class BuilderCliente {
 
-	public static ClienteWrapper constroiClienteAPartirViews(CadastroClienteActivity activityCliente) {
+	public static ClienteWrapper constroiClienteAPartirViews(IncluirAlterarClienteActivity activityCliente) {
 		List<View> listaCamposObrigatorio = new ArrayList<View>();
 		EditText nomeEditView = (EditText) activityCliente.findViewById(R.idIncluir.nomeEditView);
 		listaCamposObrigatorio.add(nomeEditView);
@@ -142,7 +143,7 @@ public class BuilderCliente {
 			if (nome != null && !nome.equals("")) {
 				String letra = nome.substring(0, 1);
 				SectionItem section = new SectionItem(letra);
-				EntryItem item = new EntryItem(nome,ConstantesCliente.ID.getResultByCursor(cursor) );
+				EntryItem item = new EntryItem(nome, ConstantesCliente.ID.getResultByCursor(cursor));
 				List<EntryItem> listaEntradas = mapaEntradas.get(section);
 				if (listaEntradas != null) {
 					listaEntradas.add(item);
@@ -159,25 +160,91 @@ public class BuilderCliente {
 
 	public static ContentValues clienteParaContentValues(ClienteWrapper cliente) {
 		ContentValues values = new ContentValues();
-		values.put(ConstantesCliente.NOME_COMPLETO.name(), cliente.getNomeCompleto());
-		values.put(ConstantesCliente.RG.name(), cliente.getRg());
-		values.put(ConstantesCliente.CPF.name(), cliente.getCpf());
-		values.put(ConstantesCliente.ORGAO_EXPEDIDOR.name(), cliente.getOrgaoExpedidor());
-		values.put(ConstantesCliente.RUA.name(), cliente.getRua());
-		values.put(ConstantesCliente.NUMERO.name(), cliente.getNumero());
-		values.put(ConstantesCliente.CEP.name(), cliente.getCep());
-		values.put(ConstantesCliente.BAIRRO.name(), cliente.getBairro());
-		values.put(ConstantesCliente.ESTADO.name(), cliente.getEstado());
-		values.put(ConstantesCliente.NACIONALIDADE.name(), cliente.getNacionalidade());
-		values.put(ConstantesCliente.ESTADO_CIVIL.name(), cliente.getEstadoCivil());
-		values.put(ConstantesCliente.PROFISSAO.name(), cliente.getProfissao());
-		values.put(ConstantesCliente.CNPJ.name(), cliente.getCnpg());
-		values.put(ConstantesCliente.CTPS.name(), cliente.getCtps());
-		values.put(ConstantesCliente.PIS_PASEP.name(), cliente.getPisPasep());
-		values.put(ConstantesCliente.INSCRICAO_ESTADUAL.name(), cliente.getInscricaoEstadual());
-		values.put(ConstantesCliente.PAI.name(), cliente.getPai());
-		values.put(ConstantesCliente.MAE.name(), cliente.getMae());
+		String nomeCompleto = cliente.getNomeCompleto();
+		if (nomeCompleto != null && !nomeCompleto.equals("")) {
+			values.put(ConstantesCliente.NOME_COMPLETO.name(), nomeCompleto);
+		}
+		String rg = cliente.getRg();
+		if (rg != null && !rg.equals("")) {
+			values.put(ConstantesCliente.RG.name(), rg);
+		}
+		String cpf = cliente.getCpf();
+		if (cpf != null && !cpf.equals("")) {
+			values.put(ConstantesCliente.CPF.name(), cpf);
+		}
+
+		String orgaoExpedidor = cliente.getOrgaoExpedidor();
+		if (orgaoExpedidor != null && !orgaoExpedidor.equals("")) {
+			values.put(ConstantesCliente.ORGAO_EXPEDIDOR.name(), orgaoExpedidor);
+		}
+		String rua = cliente.getRua();
+		if (rua != null && !rua.equals("")) {
+			values.put(ConstantesCliente.RUA.name(), rua);
+		}
+		String numero = cliente.getNumero();
+		if (numero != null && !numero.equals("")) {
+			values.put(ConstantesCliente.NUMERO.name(), numero);
+		}
+		String cep = cliente.getCep();
+		if (cep != null && !cep.equals("")) {
+			values.put(ConstantesCliente.CEP.name(), cep);
+		}
+		String bairro = cliente.getBairro();
+		if (bairro != null && !bairro.equals("")) {
+			values.put(ConstantesCliente.BAIRRO.name(), bairro);
+		}
+		String estado = cliente.getEstado();
+		if (estado != null && !estado.equals("")) {
+			values.put(ConstantesCliente.ESTADO.name(), estado);
+		}
+		String nacionalidade = cliente.getNacionalidade();
+		if (nacionalidade != null && !nacionalidade.equals("")) {
+			values.put(ConstantesCliente.NACIONALIDADE.name(), nacionalidade);
+		}
+		String estadoCivil = cliente.getEstadoCivil();
+		if (estadoCivil != null && !estadoCivil.equals("")) {
+			values.put(ConstantesCliente.ESTADO_CIVIL.name(), estadoCivil);
+		}
+		String profissao = cliente.getProfissao();
+		if (profissao != null && !profissao.equals("")) {
+			values.put(ConstantesCliente.PROFISSAO.name(), profissao);
+		}
+		String cnpg = cliente.getCnpg();
+		if (cnpg != null && !cnpg.equals("")) {
+			values.put(ConstantesCliente.CNPJ.name(), cnpg);
+		}
+		String ctps = cliente.getCtps();
+		if (ctps != null && !ctps.equals("")) {
+			values.put(ConstantesCliente.CTPS.name(), ctps);
+		}
+		String pisPasep = cliente.getPisPasep();
+		if (pisPasep != null && !pisPasep.equals("")) {
+			values.put(ConstantesCliente.PIS_PASEP.name(), pisPasep);
+		}
+		String inscricaoEstadual = cliente.getInscricaoEstadual();
+		if (inscricaoEstadual != null && !inscricaoEstadual.equals("")) {
+			values.put(ConstantesCliente.INSCRICAO_ESTADUAL.name(), inscricaoEstadual);
+		}
+		String pai = cliente.getPai();
+		if (pai != null && !pai.equals("")) {
+			values.put(ConstantesCliente.PAI.name(), pai);
+		}
+		String mae = cliente.getMae();
+		if (mae != null && !mae.equals("")) {
+			values.put(ConstantesCliente.MAE.name(), mae);
+		}
 		return values;
+	}
+
+	public static List<Item> converteMapEmLista(Map<SectionItem, List<EntryItem>> mapaEntradas) {
+		List<Item> listaEntradas = new ArrayList<Item>();
+		for (Item secao : mapaEntradas.keySet()) {
+			listaEntradas.add(secao);
+			for (Item entradas : mapaEntradas.get(secao)) {
+				listaEntradas.add(entradas);
+			}
+		}
+		return listaEntradas;
 	}
 
 }

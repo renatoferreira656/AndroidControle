@@ -49,27 +49,39 @@ public class EntryAdapter extends ArrayAdapter<Item> {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View view = convertView;
-
 		final Item item = items.get(position);
 		if (item != null) {
 			if (item.isSection()) {
-				SectionItem sectionItem = (SectionItem) item;
-				view = this.layoutInflater.inflate(this.listItemSection, null);
-
-				view.setOnClickListener(null);
-				view.setOnLongClickListener(null);
-				view.setLongClickable(false);
-
-				final TextView sectionView = (TextView) view.findViewById(this.listItemSectionText);
-				sectionView.setText(sectionItem.getTitle());
+				view = defineSectionItem(item);
 			} else {
-				EntryItem entryItem = (EntryItem) item;
-				view = this.layoutInflater.inflate(this.listItemEntry, null);
-				final TextView title = (TextView) view.findViewById(this.listItemEntryTitle);
-
-				if (title != null)
-					title.setText(entryItem.getTitle());
+				view = defineEntryItem(item);
 			}
+		}
+		return view;
+	}
+
+	private View defineSectionItem(final Item item) {
+		View view;
+		SectionItem sectionItem = SectionItem.class.cast(item);
+		view = this.layoutInflater.inflate(this.listItemSection, null);
+
+		view.setOnClickListener(null);
+		view.setOnLongClickListener(null);
+		view.setLongClickable(false);
+
+		final TextView sectionView = (TextView) view.findViewById(this.listItemSectionText);
+		sectionView.setText(sectionItem.getTitle());
+		return view;
+	}
+
+	private View defineEntryItem(final Item item) {
+		View view;
+		EntryItem entryItem = EntryItem.class.cast(item);
+		view = this.layoutInflater.inflate(this.listItemEntry, null);
+		
+		final TextView title = (TextView) view.findViewById(this.listItemEntryTitle);
+		if (title != null) {
+			title.setText(entryItem.getTitle());
 		}
 		return view;
 	}

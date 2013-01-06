@@ -29,7 +29,13 @@ public class ClienteDao {
 		ContentValues values = BuilderCliente.clienteParaContentValues(cliente);
 		long id = db.insert("clientes", null, values);
 		cliente.setId(id);
-		this.buscarListagemFiltrandoPorInicioDoNome("");
+		return cliente;
+	}
+
+	public ClienteWrapper modifyCliente(ClienteWrapper cliente) {
+		ContentValues values = BuilderCliente.clienteParaContentValues(cliente);
+		String whereClause = "id=" + cliente.getId();
+		db.update("clientes", values, whereClause, null);
 		return cliente;
 	}
 
@@ -41,17 +47,33 @@ public class ClienteDao {
 	 */
 	public Map<SectionItem, List<EntryItem>> buscarListagemFiltrandoPorInicioDoNome(String nome) {
 		String[] buscaColunas = new String[] { ConstantesCliente.NOME_COMPLETO.name(), ConstantesCliente.ID.name() };
-		String condition = ConstantesCliente.NOME_COMPLETO.name()+  " like '" + nome + "%'";
-		String orderBy = ConstantesCliente.NOME_COMPLETO.name()+" ASC";
+		String condition = ConstantesCliente.NOME_COMPLETO.name() + " like '" + nome + "%'";
+		String orderBy = ConstantesCliente.NOME_COMPLETO.name() + " ASC";
 		String tableName = "clientes";
 		Cursor cursor = db.query(tableName, buscaColunas, condition, null, null, null, orderBy);
-		if (cursor!=null && cursor.getCount()>0) {
+		if (cursor != null && cursor.getCount() > 0) {
 			cursor.moveToFirst();
 			Map<SectionItem, List<EntryItem>> entradas = BuilderCliente.constroiMapListagemAPartirCursor(cursor);
 			cursor.close();
 			return entradas;
 		}
 		return new TreeMap<SectionItem, List<EntryItem>>();
+
+	}
+
+	public ClienteWrapper findById(Long id) {
+		String[] buscaColunas = ConstantesCliente.getArrayStringValues();
+		String condition = ConstantesCliente.ID.name() + " = " + id + "";
+		String orderBy = ConstantesCliente.ID.name() + " ASC";
+		String tableName = "clientes";
+		Cursor cursor = db.query(tableName, buscaColunas, condition, null, null, null, orderBy);
+		if (cursor != null && cursor.getCount() > 0) {
+			cursor.moveToFirst();
+			ClienteWrapper cliente = BuilderCliente.constroiClienteAPartirCursor(cursor);
+			cursor.close();
+			return cliente;
+		}
+		return null;
 
 	}
 }

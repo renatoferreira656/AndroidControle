@@ -29,7 +29,10 @@
     <string name="salvar">Salvar</string>
     <string name="mais">+</string>
     <string name="cancelar">Cancelar</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="editar">Editar</string>
     <string name="title_activity_listagem_cliente">ListagemClienteActivity</string>
     <string name="sem_selecao">Sem Seleção</string>
+    <string name="title_activity_visualizar_cliente">VisualizarClienteActivity</string>
+   
+
 </resources>

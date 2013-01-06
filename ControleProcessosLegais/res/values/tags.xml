@@ -1,5 +1,4 @@
 <resources>
-
-   <string name="estado_tag">estado</string>
-   <string name="estado_civil_tag">estado_civil</string>
+   <string name="editar_cliente_tag">EDITAR_CLIENTE</string>
+   <string name="cancelar_volta_para_listagem_tag">LISTAGEM_CLIENTE</string>
 </resources>
