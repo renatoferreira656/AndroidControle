@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+idVisualizar/editar"
+        android:orderInCategory="100"
+        android:title="@string/editar_cliente_tag"
+        android:titleCondensed="@string/editar"/>
+    <item
+        android:id="@+idVisualizar/cancelar"
+        android:orderInCategory="100"
+        android:title="@string/cancelar_volta_para_listagem_tag"
+        android:titleCondensed="@string/cancelar"/>
+
+</menu>

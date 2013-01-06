@@ -1,0 +1,305 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <View
+            android:id="@+idVisualizar/barra1"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:background="#FF3300" >
+        </View>
+
+        <TextView
+            android:id="@+idVisualizar/nomeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="40sp"
+            android:layout_below="@+idVisualizar/barra1"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:layout_marginTop="3sp"
+            android:height="10sp"
+            android:hint="@string/nome_completo"
+            android:textSize="13sp"
+            android:width="300sp" />
+
+        <TextView
+            android:id="@+idVisualizar/rgTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="40sp"
+            android:layout_below="@+idVisualizar/nomeTextView"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:layout_marginTop="3sp"
+            android:hint="@string/rg"
+            android:textSize="13sp"
+            android:width="150sp" />
+
+        <TextView
+            android:id="@+idVisualizar/orgaoExpedidorTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="40sp"
+            android:layout_below="@+idVisualizar/nomeTextView"
+            android:layout_marginLeft="4sp"
+            android:layout_marginRight="10sp"
+            android:layout_marginTop="3sp"
+            android:layout_toRightOf="@+idVisualizar/rgTextView"
+            android:hint="@string/orgao_expedidor"
+            android:textSize="13sp"
+            android:width="150sp" />
+
+        <TextView
+            android:id="@+idVisualizar/cpfcnpjTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="40sp"
+            android:layout_below="@+idVisualizar/orgaoExpedidorTextView"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:layout_marginTop="3sp"
+            android:hint="@string/cpf_cnpj"
+            android:textSize="13sp"
+            android:width="300sp" />
+
+        <View
+            android:id="@+idVisualizar/barra2"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+idVisualizar/cpfcnpjTextView"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:background="#FF3300" >
+        </View>
+
+        <TextView
+            android:id="@+idVisualizar/enderecoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="25sp"
+            android:layout_below="@+idVisualizar/barra2"
+            android:layout_marginLeft="15sp"
+            android:text="@string/endereco_completo"
+            android:textSize="18sp"
+            tools:context=".CadastroClienteActivity" />
+
+        <View
+            android:id="@+idVisualizar/barra3"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+idVisualizar/enderecoTextView"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:background="#FF3300" >
+        </View>
+
+        <TextView
+            android:id="@+idVisualizar/ruaTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="40sp"
+            android:layout_below="@+idVisualizar/barra3"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:layout_marginTop="3sp"
+            android:hint="@+string/rua"
+            android:textSize="13sp"
+            android:width="300sp" />
+
+        <TextView
+            android:id="@+idVisualizar/numeroTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="40sp"
+            android:layout_below="@+idVisualizar/ruaTextView"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:layout_marginTop="3sp"
+            android:hint="@+string/numero"
+            android:textSize="13sp"
+            android:width="100sp" />
+
+        <TextView
+            android:id="@+idVisualizar/bairroTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="40sp"
+            android:layout_below="@+idVisualizar/ruaTextView"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:layout_marginTop="3sp"
+            android:layout_toRightOf="@+idVisualizar/numeroTextView"
+            android:hint="@+string/bairro"
+            android:textSize="13sp"
+            android:width="200sp" />
+
+        <TextView
+            android:id="@+idVisualizar/estadoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="40sp"
+            android:layout_below="@+idVisualizar/bairroTextView"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:layout_marginTop="3sp"
+            android:textSize="13sp"
+            android:width="100sp" />
+
+        <TextView
+            android:id="@+idVisualizar/cepTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="40sp"
+            android:layout_below="@+idVisualizar/estadoTextView"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:layout_marginTop="3sp"
+            android:textSize="13sp"
+            android:width="200sp" />
+
+        <View
+            android:id="@+idVisualizar/barra4"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+idVisualizar/cepTextView"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:background="#FF3300" >
+        </View>
+
+        <TextView
+            android:id="@+idVisualizar/nacionalidadeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="40sp"
+            android:layout_below="@+idVisualizar/barra4"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:layout_marginTop="3sp"
+            android:hint="@+string/nacionalidade"
+            android:textSize="13sp"
+            android:width="300sp" />
+
+        <TextView
+            android:id="@+idVisualizar/estadoCivilTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="40sp"
+            android:layout_below="@+idVisualizar/nacionalidadeTextView"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:layout_marginTop="3sp"
+            android:drawSelectorOnTop="true"
+            android:textSize="13sp"
+            android:width="300sp" />
+
+        <TextView
+            android:id="@+idVisualizar/profissaoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="40sp"
+            android:layout_below="@+idVisualizar/estadoCivilTextView"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:layout_marginTop="3sp"
+            android:hint="@+string/profissao"
+            android:textSize="13sp"
+            android:width="300sp" />
+
+        <View
+            android:id="@+idVisualizar/barra5"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+idVisualizar/profissaoTextView"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:background="#FF3300" >
+        </View>
+
+        <TextView
+            android:id="@+idVisualizar/nomeDosPaisTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="25sp"
+            android:layout_below="@+idVisualizar/barra5"
+            android:layout_marginLeft="15sp"
+            android:text="@string/nome_dos_pais"
+            android:textSize="18sp"
+            tools:context=".CadastroClienteActivity" />
+
+        <View
+            android:id="@+idVisualizar/barra6"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+idVisualizar/nomeDosPaisTextView"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:background="#FF3300" >
+        </View>
+
+        <TextView
+            android:id="@+idVisualizar/maeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="40sp"
+            android:layout_below="@+idVisualizar/barra6"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:layout_marginTop="3sp"
+            android:hint="@+string/mae"
+            android:textSize="13sp"
+            android:width="300sp" />
+
+        <TextView
+            android:id="@+idVisualizar/paiTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="40sp"
+            android:layout_below="@+idVisualizar/maeTextView"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:layout_marginTop="3sp"
+            android:hint="@+string/pai"
+            android:textSize="13sp"
+            android:width="300sp" />
+
+        <View
+            android:id="@+idVisualizar/barra7"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+idVisualizar/paiTextView"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:background="#FF3300" >
+        </View>
+
+        <TextView
+            android:id="@+idVisualizar/ctpsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="40sp"
+            android:layout_below="@+idVisualizar/barra7"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:layout_marginTop="3sp"
+            android:hint="@+string/ctps"
+            android:textSize="13sp"
+            android:width="300sp" />
+
+        <TextView
+            android:id="@+idVisualizar/pisPasepTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="40sp"
+            android:layout_below="@+idVisualizar/ctpsTextView"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:layout_marginTop="3sp"
+            android:hint="@+string/pis_pasep"
+            android:textSize="13sp"
+            android:width="300sp" />
+
+        <TextView
+            android:id="@+idVisualizar/inscricaoEstadualTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="40sp"
+            android:layout_below="@+idVisualizar/pisPasepTextView"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:layout_marginTop="3sp"
+            android:hint="@+string/inscricao_estadual"
+            android:textSize="13sp"
+            android:width="300sp" />
+    </RelativeLayout>
+
+</ScrollView>
