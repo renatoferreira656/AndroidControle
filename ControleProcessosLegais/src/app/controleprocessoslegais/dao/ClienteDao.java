@@ -17,6 +17,7 @@ import app.controleprocessoslegais.wrappers.ClienteWrapper;
 
 public class ClienteDao {
 
+	private static final String TABLE_CLIENTES = "clientes";
 	private SQLiteDatabase db;
 	private DatabaseHelper helper;
 
@@ -27,7 +28,7 @@ public class ClienteDao {
 
 	public ClienteWrapper addCliente(ClienteWrapper cliente) {
 		ContentValues values = BuilderCliente.clienteParaContentValues(cliente);
-		long id = db.insert("clientes", null, values);
+		long id = db.insert(TABLE_CLIENTES, null, values);
 		cliente.setId(id);
 		return cliente;
 	}
@@ -35,8 +36,13 @@ public class ClienteDao {
 	public ClienteWrapper modifyCliente(ClienteWrapper cliente) {
 		ContentValues values = BuilderCliente.clienteParaContentValues(cliente);
 		String whereClause = "id=" + cliente.getId();
-		db.update("clientes", values, whereClause, null);
+		db.update(TABLE_CLIENTES, values, whereClause, null);
 		return cliente;
+	}
+
+	public void removeCliente(ClienteWrapper cliente) {
+		String whereClause = "id=" + cliente.getId();
+		db.delete(TABLE_CLIENTES, whereClause, null);
 	}
 
 	/**
@@ -49,7 +55,7 @@ public class ClienteDao {
 		String[] buscaColunas = new String[] { ConstantesCliente.NOME_COMPLETO.name(), ConstantesCliente.ID.name() };
 		String condition = ConstantesCliente.NOME_COMPLETO.name() + " like '" + nome + "%'";
 		String orderBy = ConstantesCliente.NOME_COMPLETO.name() + " ASC";
-		String tableName = "clientes";
+		String tableName = TABLE_CLIENTES;
 		Cursor cursor = db.query(tableName, buscaColunas, condition, null, null, null, orderBy);
 		if (cursor != null && cursor.getCount() > 0) {
 			cursor.moveToFirst();
@@ -65,12 +71,13 @@ public class ClienteDao {
 		String[] buscaColunas = ConstantesCliente.getArrayStringValues();
 		String condition = ConstantesCliente.ID.name() + " = " + id + "";
 		String orderBy = ConstantesCliente.ID.name() + " ASC";
-		String tableName = "clientes";
+		String tableName = TABLE_CLIENTES;
 		Cursor cursor = db.query(tableName, buscaColunas, condition, null, null, null, orderBy);
 		if (cursor != null && cursor.getCount() > 0) {
 			cursor.moveToFirst();
 			ClienteWrapper cliente = BuilderCliente.constroiClienteAPartirCursor(cursor);
 			cursor.close();
+			cliente.setId(id);
 			return cliente;
 		}
 		return null;

@@ -38,10 +38,17 @@ public class VisualizarClienteActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		String idCliente = this.getIntent().getExtras().getString(ConstantesTransporte.ID_CLIENTE.name());
 		String nomeFiltro = this.getIntent().getExtras().getString(ConstantesTransporte.NOME_CLIENTE_FILTRO.name());
-		Map<ConstantesTransporte,String> args = new HashMap<ConstantesTransporte,String>();
+		Map<ConstantesTransporte, String> args = new HashMap<ConstantesTransporte, String>();
 		args.put(ConstantesTransporte.ID_CLIENTE, idCliente);
 		args.put(ConstantesTransporte.NOME_CLIENTE_FILTRO, nomeFiltro);
-		return ClienteMenuListener.valueOf(item.getTitle().toString()).inicializarActivity(this, args);
+		if (item.getTitle().toString().equals(ClienteMenuListener.EDITAR_CLIENTE.name())) {
+			ClienteMenuListener.EDITAR_CLIENTE.setTelaRetorno(ClienteMenuListener.VISUALIZAR_CLIENTE);
+			return ClienteMenuListener.EDITAR_CLIENTE.inicializarActivity(this, args);
+		} else if (item.getTitle().toString().equals(ClienteMenuListener.LISTAGEM_CLIENTE.name())) {
+			return ClienteMenuListener.LISTAGEM_CLIENTE.inicializarActivity(this, args);
+		} else if (item.getTitle().toString().equals(ClienteMenuListener.EXCLUIR_CLIENTE.name())) {
+			return ClienteMenuListener.EXCLUIR_CLIENTE.inicializarActivity(this, args);
+		}
+		return false;
 	}
-
 }

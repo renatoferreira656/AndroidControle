@@ -75,6 +75,7 @@ public class ListagemClienteActivity extends Activity implements OnItemClickList
 	public void onClick(View v) {
 		EditText searchEdit = EditText.class.cast(this.findViewById(R.idListagem.searchEdit));
 		String search = searchEdit.getText() == null ? "" : searchEdit.getText().toString();
+		ClienteMenuListener.INCLUIR_CLIENTE.setTelaRetorno(ClienteMenuListener.LISTAGEM_CLIENTE);
 		ClienteMenuListener.INCLUIR_CLIENTE.inicializarActivity(this,
 				Collections.singletonMap(ConstantesTransporte.NOME_CLIENTE_FILTRO, search));
 	}
@@ -128,7 +129,7 @@ public class ListagemClienteActivity extends Activity implements OnItemClickList
 		return true;
 	}
 
-	private String atualizaIntent() {
+	public String atualizaIntent() {
 		Bundle extras = this.getIntent().getExtras();
 		String search = "";
 		if (extras != null) {
@@ -141,7 +142,7 @@ public class ListagemClienteActivity extends Activity implements OnItemClickList
 		return search;
 	}
 
-	private void atualizaListagem(String filtroPor) {
+	public void atualizaListagem(String filtroPor) {
 		Map<SectionItem, List<EntryItem>> mapaEntradas = this.clienteDao
 				.buscarListagemFiltrandoPorInicioDoNome(filtroPor);
 		List<Item> items = BuilderCliente.converteMapEmLista(mapaEntradas);

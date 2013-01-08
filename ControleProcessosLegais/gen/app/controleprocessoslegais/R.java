@@ -77,6 +77,7 @@ public final class R {
         public static final int enderecoTextView=0x7f0b0006;
         public static final int estadoCivilTextView=0x7f0b000f;
         public static final int estadoTextView=0x7f0b000b;
+        public static final int excluir=0x7f0b001c;
         public static final int inscricaoEstadualTextView=0x7f0b0019;
         public static final int maeTextView=0x7f0b0014;
         public static final int nacionalidadeTextView=0x7f0b000e;
@@ -107,17 +108,20 @@ public final class R {
         public static final int bairro=0x7f05000e;
         public static final int campo_obrigatorio=0x7f050000;
         public static final int cancelar=0x7f05001c;
-        public static final int cancelar_volta_para_listagem_tag=0x7f050022;
+        public static final int cancelar_volta_para_listagem_tag=0x7f050024;
         public static final int cep=0x7f05000d;
         public static final int cnpg=0x7f050013;
         public static final int cpf=0x7f050007;
         public static final int cpf_cnpj=0x7f050008;
         public static final int ctps=0x7f050017;
-        public static final int editar=0x7f05001d;
-        public static final int editar_cliente_tag=0x7f050021;
+        public static final int editar=0x7f05001e;
+        public static final int editar_cliente_tag=0x7f050023;
         public static final int endereco_completo=0x7f05000a;
         public static final int estado_civil=0x7f050011;
         public static final int estados=0x7f05000f;
+        public static final int excluir=0x7f05001d;
+        public static final int excluir_cliente_tag=0x7f050025;
+        public static final int excluir_message=0x7f050021;
         public static final int inscricao_estadual=0x7f050019;
         public static final int mae=0x7f050015;
         public static final int mais=0x7f05001b;
@@ -134,10 +138,10 @@ public final class R {
         public static final int rg=0x7f050006;
         public static final int rua=0x7f05000b;
         public static final int salvar=0x7f05001a;
-        public static final int sem_selecao=0x7f05001f;
+        public static final int sem_selecao=0x7f050020;
         public static final int title_activity_cadastro_cliente=0x7f050003;
-        public static final int title_activity_listagem_cliente=0x7f05001e;
-        public static final int title_activity_visualizar_cliente=0x7f050020;
+        public static final int title_activity_listagem_cliente=0x7f05001f;
+        public static final int title_activity_visualizar_cliente=0x7f050022;
     }
     public static final class style {
         public static final int AppTheme=0x7f060000;

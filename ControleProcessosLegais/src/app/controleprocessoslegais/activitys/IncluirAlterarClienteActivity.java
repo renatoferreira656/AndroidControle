@@ -28,6 +28,7 @@ public class IncluirAlterarClienteActivity extends Activity {
 		this.clienteDao = new ClienteDao(getApplicationContext());
 		this.atualizarDadosEmTela();
 		this.inicializaBotaoSalvar();
+		
 		this.incializaBotaoCancelar();
 	}
 
@@ -61,14 +62,16 @@ public class IncluirAlterarClienteActivity extends Activity {
 	}
 
 	private boolean botaoCancelar() {
+		ClienteMenuListener telaRetorno = (ClienteMenuListener) this.getIntent().getExtras()
+				.get(ConstantesTransporte.TELA_RETORNO.name());
 		Map<ConstantesTransporte, String> args = new HashMap<ConstantesTransporte, String>();
 		String filtro = getIntent().getExtras().getString(ConstantesTransporte.NOME_CLIENTE_FILTRO.name());
 		args.put(ConstantesTransporte.NOME_CLIENTE_FILTRO, filtro);
 		if (this.idCliente == null) {
-			return ClienteMenuListener.LISTAGEM_CLIENTE.inicializarActivity(this, args);
+			return telaRetorno.inicializarActivity(this, args);
 		} else {
 			args.put(ConstantesTransporte.ID_CLIENTE, idCliente);
-			return ClienteMenuListener.VISUALIZAR_CLIENTE.inicializarActivity(this, args);
+			return telaRetorno.inicializarActivity(this, args);
 		}
 	}
 

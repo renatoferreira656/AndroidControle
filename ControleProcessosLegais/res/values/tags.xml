@@ -1,4 +1,5 @@
 <resources>
-   <string name="editar_cliente_tag">EDITAR_CLIENTE</string>
-   <string name="cancelar_volta_para_listagem_tag">LISTAGEM_CLIENTE</string>
+    <string name="editar_cliente_tag">EDITAR_CLIENTE</string>
+    <string name="cancelar_volta_para_listagem_tag">LISTAGEM_CLIENTE</string>
+    <string name="excluir_cliente_tag">EXCLUIR_CLIENTE</string>
 </resources>
