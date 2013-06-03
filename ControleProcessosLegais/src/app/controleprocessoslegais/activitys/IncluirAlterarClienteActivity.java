@@ -1,8 +1,5 @@
 package app.controleprocessoslegais.activitys;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,7 +8,6 @@ import app.controleprocessoslegais.R;
 import app.controleprocessoslegais.builders.BuilderCliente;
 import app.controleprocessoslegais.contantes.ConstantesTransporte;
 import app.controleprocessoslegais.dao.ClienteDao;
-import app.controleprocessoslegais.listener.ClienteMenuListener;
 import app.controleprocessoslegais.util.ActivityClienteHelper;
 import app.controleprocessoslegais.wrappers.ClienteWrapper;
 
@@ -47,7 +43,7 @@ public class IncluirAlterarClienteActivity extends Activity {
 					cliente.setId(Long.valueOf(idCliente));
 					clienteDao.modifyCliente(cliente);
 				}
-				botaoCancelar();
+				finish();
 			}
 		});
 	}
@@ -56,23 +52,9 @@ public class IncluirAlterarClienteActivity extends Activity {
 		Button botaoSalvar = (Button) findViewById(R.idIncluir.botaoCancelar);
 		botaoSalvar.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				botaoCancelar();
+				finish();
 			}
 		});
-	}
-
-	private boolean botaoCancelar() {
-		ClienteMenuListener telaRetorno = (ClienteMenuListener) this.getIntent().getExtras()
-				.get(ConstantesTransporte.TELA_RETORNO.name());
-		Map<ConstantesTransporte, String> args = new HashMap<ConstantesTransporte, String>();
-		String filtro = getIntent().getExtras().getString(ConstantesTransporte.NOME_CLIENTE_FILTRO.name());
-		args.put(ConstantesTransporte.NOME_CLIENTE_FILTRO, filtro);
-		if (this.idCliente == null) {
-			return telaRetorno.inicializarActivity(this, args);
-		} else {
-			args.put(ConstantesTransporte.ID_CLIENTE, idCliente);
-			return telaRetorno.inicializarActivity(this, args);
-		}
 	}
 
 	private void atualizarDadosEmTela() {

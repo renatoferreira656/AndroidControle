@@ -59,8 +59,7 @@ public class BuilderCliente {
 		EditText paiEditView = (EditText) activityCliente.findViewById(R.idIncluir.paiEditView);
 		EditText ctpsEditView = (EditText) activityCliente.findViewById(R.idIncluir.ctpsEditView);
 		EditText pisPasepEditView = (EditText) activityCliente.findViewById(R.idIncluir.pisPasepEditView);
-		EditText inscricaoEstadualEditView = (EditText) activityCliente
-				.findViewById(R.idIncluir.inscricaoEstadualEditView);
+		EditText inscricaoEstadualEditView = (EditText) activityCliente.findViewById(R.idIncluir.inscricaoEstadualEditView);
 
 		ClienteWrapper cliente = new ClienteWrapper();
 		cliente.setBairro(bairroEditView.getText().toString());
@@ -138,22 +137,26 @@ public class BuilderCliente {
 
 	public static Map<SectionItem, List<EntryItem>> constroiMapListagemAPartirCursor(Cursor cursor) {
 		Map<SectionItem, List<EntryItem>> mapaEntradas = new TreeMap<SectionItem, List<EntryItem>>();
-		while (!cursor.isAfterLast()) {
-			String nome = ConstantesCliente.NOME_COMPLETO.getResultByCursor(cursor);
-			if (nome != null && !nome.equals("")) {
-				String letra = nome.substring(0, 1);
-				SectionItem section = new SectionItem(letra);
-				EntryItem item = new EntryItem(nome, ConstantesCliente.ID.getResultByCursor(cursor));
-				List<EntryItem> listaEntradas = mapaEntradas.get(section);
-				if (listaEntradas != null) {
-					listaEntradas.add(item);
-				} else {
-					listaEntradas = new ArrayList<EntryItem>();
-					listaEntradas.add(item);
-					mapaEntradas.put(section, listaEntradas);
+		if (cursor != null && cursor.getCount() > 0) {
+			cursor.moveToFirst();
+			while (!cursor.isAfterLast()) {
+				String nome = ConstantesCliente.NOME_COMPLETO.getResultByCursor(cursor);
+				if (nome != null && !nome.equals("")) {
+					String letra = nome.substring(0, 1);
+					SectionItem section = new SectionItem(letra);
+					EntryItem item = new EntryItem(nome, ConstantesCliente.ID.getResultByCursor(cursor));
+					List<EntryItem> listaEntradas = mapaEntradas.get(section);
+					if (listaEntradas != null) {
+						listaEntradas.add(item);
+					} else {
+						listaEntradas = new ArrayList<EntryItem>();
+						listaEntradas.add(item);
+						mapaEntradas.put(section, listaEntradas);
+					}
 				}
+				cursor.moveToNext();
 			}
-			cursor.moveToNext();
+			cursor.close();
 		}
 		return mapaEntradas;
 	}

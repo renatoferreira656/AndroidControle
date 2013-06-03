@@ -15,7 +15,7 @@ public enum ClienteListagemContextMenu {
 	EDITAR("Editar") {
 		@Override
 		public boolean efetuarAcao(ListagemClienteActivity activity, Map<ConstantesTransporte, String> args) {
-			ClienteMenuListener.EDITAR_CLIENTE.setTelaRetorno(ClienteMenuListener.LISTAGEM_CLIENTE);
+//			ClienteMenuListener.EDITAR_CLIENTE.setTelaRetorno(ClienteMenuListener.LISTAGEM_CLIENTE);
 			return ClienteMenuListener.EDITAR_CLIENTE.inicializarActivity(activity, args);
 		}
 	},

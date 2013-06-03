@@ -53,18 +53,11 @@ public class ClienteDao {
 	 */
 	public Map<SectionItem, List<EntryItem>> buscarListagemFiltrandoPorInicioDoNome(String nome) {
 		String[] buscaColunas = new String[] { ConstantesCliente.NOME_COMPLETO.name(), ConstantesCliente.ID.name() };
-		String condition = ConstantesCliente.NOME_COMPLETO.name() + " like '" + nome + "%'";
+		String[] parametros = new String[] { nome + "%" };
+		String condition = ConstantesCliente.NOME_COMPLETO.name() + " like ?";
 		String orderBy = ConstantesCliente.NOME_COMPLETO.name() + " ASC";
-		String tableName = TABLE_CLIENTES;
-		Cursor cursor = db.query(tableName, buscaColunas, condition, null, null, null, orderBy);
-		if (cursor != null && cursor.getCount() > 0) {
-			cursor.moveToFirst();
-			Map<SectionItem, List<EntryItem>> entradas = BuilderCliente.constroiMapListagemAPartirCursor(cursor);
-			cursor.close();
-			return entradas;
-		}
-		return new TreeMap<SectionItem, List<EntryItem>>();
-
+		Cursor cursor = db.query(TABLE_CLIENTES, buscaColunas, condition, parametros, null, null, orderBy);
+		return BuilderCliente.constroiMapListagemAPartirCursor(cursor);
 	}
 
 	public ClienteWrapper findById(Long id) {

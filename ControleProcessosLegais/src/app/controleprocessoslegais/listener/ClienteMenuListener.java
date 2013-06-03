@@ -22,9 +22,8 @@ public enum ClienteMenuListener {
 			Intent intent = new Intent(activity, IncluirAlterarClienteActivity.class);
 			intent.putExtra(ConstantesTransporte.NOME_CLIENTE_FILTRO.name(),
 					args.get(ConstantesTransporte.NOME_CLIENTE_FILTRO));
-			intent.putExtra(ConstantesTransporte.TELA_RETORNO.name(), this.getTelaRetorno());
+//			intent.putExtra(ConstantesTransporte.TELA_RETORNO.name(), this.getTelaRetorno());
 			activity.startActivity(intent);
-			activity.finish();
 			return true;
 		}
 	},
@@ -38,7 +37,6 @@ public enum ClienteMenuListener {
 					args.get(ConstantesTransporte.NOME_CLIENTE_FILTRO));
 			intent.putExtra(ConstantesTransporte.TELA_RETORNO.name(), this.getTelaRetorno());
 			activity.startActivity(intent);
-			activity.finish();
 			return true;
 		}
 	},
@@ -49,7 +47,6 @@ public enum ClienteMenuListener {
 			intent.putExtra(ConstantesTransporte.NOME_CLIENTE_FILTRO.name(),
 					args.get(ConstantesTransporte.NOME_CLIENTE_FILTRO));
 			activity.startActivity(intent);
-			activity.finish();
 			return true;
 		}
 	},
@@ -71,7 +68,7 @@ public enum ClienteMenuListener {
 			intent.putExtra(ConstantesTransporte.NOME_CLIENTE_FILTRO.name(),
 					args.get(ConstantesTransporte.NOME_CLIENTE_FILTRO));
 			activity.startActivity(intent);
-			activity.finish();
+//			activity.finish();
 			return true;
 		}
 	};

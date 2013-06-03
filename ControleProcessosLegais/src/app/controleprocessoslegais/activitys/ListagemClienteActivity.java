@@ -75,7 +75,6 @@ public class ListagemClienteActivity extends Activity implements OnItemClickList
 	public void onClick(View v) {
 		EditText searchEdit = EditText.class.cast(this.findViewById(R.idListagem.searchEdit));
 		String search = searchEdit.getText() == null ? "" : searchEdit.getText().toString();
-		ClienteMenuListener.INCLUIR_CLIENTE.setTelaRetorno(ClienteMenuListener.LISTAGEM_CLIENTE);
 		ClienteMenuListener.INCLUIR_CLIENTE.inicializarActivity(this,
 				Collections.singletonMap(ConstantesTransporte.NOME_CLIENTE_FILTRO, search));
 	}
